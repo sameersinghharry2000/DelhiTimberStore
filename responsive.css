@@ -1,0 +1,31 @@
+@media screen and (max-width:1237px) {
+    nav .nav_menu li{
+        display:none;
+    }
+    nav .nav_enquire li{
+        display: none;
+    }
+    .navmenuline{
+        display:block;
+    }
+}
+@media screen and (max-width:1000px) {
+    .container7{
+        width: 100%;
+    }
+    .thecard{
+        width: 40%;
+        height: 170px;
+    }
+    .container7productsbox{
+        flex-wrap: wrap;
+        margin-top:20px;
+
+    }
+    .container7products{
+        gap:1px;
+    }
+    .thecard .thecardback h3{
+        font-size:15px;
+      }
+}
