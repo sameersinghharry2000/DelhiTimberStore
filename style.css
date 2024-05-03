@@ -56,6 +56,7 @@ body {
   background-color: rgba(121, 120, 120, 0.589);
   transform: translateX(-100%);
   transition:0.8s;
+  display: flex;
 }
 .navsliderzero{
   transform: translateX(0%);
@@ -64,8 +65,14 @@ body {
   width:80%;
   height:100vh;
   background-color: white;
+  z-index: 1001;
+}
+.navslider .nav-slider-main2{
+  z-index: 1001;
+  height: 100vh;
+  width: 20%;
 
-  
+  color:white;
 }
 .navslider .nav-logo{
   padding:10px;
@@ -223,16 +230,142 @@ nav .nav_enquire li ul p {
   align-items: end;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Container 1 */
 
 .container1 {
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-image: url(img/front/bann6.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
+  background-position: center;
+  animation: photoChanger 10s  infinite ;
 }
+@keyframes photoChanger {
+  0%{
+    background-image: url(img/banner/img1_1027301030banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+  }
+  50%{
+    background-image: url(img/banner/img3_1027471047banner3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+  }
+  100%{
+    background-image: url(img/banner/img1_1027301030banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+  }
+}
+.animation-slider {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white; 
+
+  overflow: hidden;
+}
+
+.outer-text {
+  display: flex;
+  gap: 10px;
+  /* overflow: hidden; */
+}
+.inner-text ul {
+  list-style-type: none;
+  color: white;
+  line-height:95px;
+  height: 90px;
+  position: relative;
+  /* overflow: hidden; */
+  top: 0;
+  animation: upDown 19s steps(3) infinite;
+}
+@keyframes upDown {
+  100% {
+    top: -285px;
+  }
+}
+.inner-text ul li span {
+  margin-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+  top: 0;
+  left:-400px;
+  animation: leftTurner 3s infinite steps(10) alternate;
+}
+@keyframes leftTurner {
+  100%{
+    left:0;
+  }
+}
+
+/* .inner-text ul li span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-left: 6px solid rgb(255, 255, 255);
+  /* background:; */
+  /* animation: animate 2s steps(32) infinite alternate; */
+ 
+/* @keyframes animate {
+  100% {
+    left: 105%;
+  }
+} */
+.container1 h1{
+  color:white;
+  font-weight:500;
+  margin-top:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Container 2 */
 
@@ -249,9 +382,9 @@ nav .nav_enquire li ul p {
   width: 80%;
   display: flex;
 }
-/* .container2 .container2background::-webkit-scrollbar {
+.container2 .container2background::-webkit-scrollbar {
     display: none;
-  } */
+  }
 .container2box {
   height: 250px;
   min-width: 280px;
@@ -274,13 +407,15 @@ nav .nav_enquire li ul p {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 400px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .container3 .container3content {
   width: 80%;
+  margin: 30px 0px;
+  padding: 30px 0px;
 }
 .container3 .container3content1 {
   width: 50%;
@@ -318,6 +453,9 @@ nav .nav_enquire li ul p {
   display: flex;
   gap: 20px;
   overflow: auto;
+}
+.container4items::-webkit-scrollbar {
+  display: none;
 }
 .container4content {
   text-align: center;
@@ -426,7 +564,7 @@ nav .nav_enquire li ul p {
 
 .container6 {
   width: 100%;
-  height: 100px;
+  height: auto;
   background-image: url(img/front/bg_cta_big.webp);
   background-repeat: no-repeat;
   background-size: cover;
@@ -434,6 +572,12 @@ nav .nav_enquire li ul p {
   justify-content: space-around;
   align-items: center;
   color: white;
+  flex-wrap: wrap;
+
+}
+.container6 h1{
+  text-align: center;
+
 }
 .container6 button {
   width: 180px;
@@ -444,6 +588,7 @@ nav .nav_enquire li ul p {
   color: white;
   font-weight: 500;
   font-size: 15px;
+  margin: 30px 0;
 }
 
 /* Container 7 */
@@ -695,6 +840,8 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .container10::after {
   content: " ";
@@ -703,33 +850,41 @@ p {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+
 }
+.container10main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  width: 80%;
+  height: 100%;
+}
+.container10main h1:nth-child(1){
+  color:orange;
+  font-size:0px;
+  margin-bottom:-30px;
 
-
-  .cont10-slider-container {
-    position: relative;
-  }
-  .cont10-slider {
-    display: flex;
-    overflow: hidden;
-  }
-  .cont10-slide {
-    width: 100%;
-    transition: opacity 0.5s;
-  }
-  .cont10-slider-controls {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .cont10-prev, .cont10-next {
-    cursor: pointer;
-  }
-  .cont10-prev:hover, .cont10-next:hover {
-    background-color: #ccc;
-  }
-
+}
+.container10main img{
+  width:100px;
+  border-radius: 50%;
+}
+.container10main h1:nth-child(3) , h1:nth-child(4){
+  color:white;
+  font-weight: 400;
+  text-wrap: wrap;
+  text-align: center;
+}
+.container10main h2{
+  color:white;
+  margin-top:10px;
+}
+.container10main p{
+  color:#e56c04;
+  font-weight: 500;
+}
 
 /* Container 11 */
 
@@ -754,9 +909,12 @@ p {
   justify-content: center;
   gap: 20px;
   margin: 50px 0;
+  flex-wrap:wrap;
 }
 .container11aboutus {
+  min-width: 200px;
   width: 20%;
+
   font-size: 13px;
   height: auto;
 }
@@ -764,6 +922,7 @@ p {
   margin-bottom: 20px;
 }
 .container11ourproducts {
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   width: 20%;
@@ -777,6 +936,7 @@ p {
   font-size: 14px;
 }
 .containre11important {
+  min-width: 200px;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -789,6 +949,7 @@ p {
   color: grey;
 }
 .container11map {
+  min-width: 200px;
   width: 20%;
 }
 .container11follow {

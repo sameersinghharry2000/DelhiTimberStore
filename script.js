@@ -10,9 +10,9 @@ navbtn.addEventListener("click",()=>{
     if(navbtn.style.display="block"){
         slider.classList.add("navsliderzero");
     }
+
 })
 
-
-
-
-
+document.querySelector(".nav-slider-main2").addEventListener("click",()=>{
+    slider.classList.remove("navsliderzero");
+})
